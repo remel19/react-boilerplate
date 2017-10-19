@@ -19,6 +19,11 @@ const config = {
                 test: /\.json$/,
                 exclude: /(node_modules)/,
                 loader: 'json-loader'
+            },
+            {
+                test: /\.css$/,
+                exclude: /(node_modules)/,
+                loader: 'style-loader!css-loader!postcss-loader'
             }
         ]
     },
