@@ -1,0 +1,24 @@
+{
+    "extends": "rallycoding",
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "globals": {
+        "React": true
+    },
+    "ecmaFeatures": {
+        "jsx": true
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "import/no-extraneous-dependencies": 0,
+        "import/no-unresolved": 0,
+        "react/require-extension": 0,
+        "no-unused-expressions": 0,
+        "import/imports-first": 0,
+        "arrow-body-style": 0
+    }
+}

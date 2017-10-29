@@ -1,19 +1,24 @@
 const webpack = require('webpack');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const config = {
-    entry: path.resolve('src/index.js'),
+    entry: [
+        'babel-polyfill',
+        'react-hot-loader/patch',
+        path.resolve('src/index.js')
+    ],
     output: {
-        path: path.resolve('build/assets'),
-        filename: 'bundle.js',
-        publicPath: "assets/"
+        path: path.resolve('build/'),
+        filename: 'bundle.js'
     },
 
     module: {
         rules: [{
                 test: /\.js$/,
                 exclude: /(node_modules)/,
-                loader: 'babel-loader',
+                loader: 'babel-loader'
             },
             {
                 test: /\.json$/,
@@ -30,9 +35,21 @@ const config = {
 
     devServer: {
         contentBase: path.resolve('build/'),
+        historyApiFallback: true,
         compress: true,
+        hot: true,
         port: 5000
-    }
+    },
+
+    plugins: [
+        new CleanWebpackPlugin(['build']),
+        new HtmlWebpackPlugin({
+            title: 'Welcome to Poletop',
+            template: 'template.ejs'
+        }),
+        new webpack.NamedModulesPlugin(),
+        new webpack.HotModuleReplacementPlugin()
+    ]
 
 };
 
