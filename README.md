@@ -1,4 +1,4 @@
-# react-webpack
+# react-boilerplate
 A starter project. React.js+Webpack
 
 #### To get started:
