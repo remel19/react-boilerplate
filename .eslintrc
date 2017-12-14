@@ -2,7 +2,8 @@
     "extends": "rallycoding",
     "env": {
         "browser": true,
-        "node": true
+        "node": true,
+        "jest/globals": true
     },
     "globals": {
         "React": true
@@ -11,7 +12,8 @@
         "jsx": true
     },
     "plugins": [
-        "react"
+        "react",
+        "jest"
     ],
     "rules": {
         "import/no-extraneous-dependencies": 0,
@@ -19,6 +21,14 @@
         "react/require-extension": 0,
         "no-unused-expressions": 0,
         "import/imports-first": 0,
-        "arrow-body-style": 0
+        "arrow-body-style": 0,
+        "no-param-reassign": 0,
+        "no-nested-ternary": 0,
+        "indent": ["error",4],
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/valid-expect": "error",
+        "no-new": 0
     }
 }

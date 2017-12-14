@@ -1,35 +1,42 @@
+//js bundler
 const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin'); //pulgin to create new html
+const CleanWebpackPlugin = require('clean-webpack-plugin'); //cleans old build folder
 
+//config of how the bundle should work
 const config = {
     entry: [
         'babel-polyfill',
         'react-hot-loader/patch',
-        path.resolve('src/index.js')
+        path.resolve('src/index.js')//entry path
     ],
     output: {
-        path: path.resolve('build/'),
-        filename: 'bundle.js'
+        path: path.resolve('build'), //folder's name
+        publicPath: '',
+        filename: 'assets/bundle.js'//output path
     },
 
     module: {
         rules: [{
-                test: /\.js$/,
-                exclude: /(node_modules)/,
-                loader: 'babel-loader'
-            },
-            {
-                test: /\.json$/,
-                exclude: /(node_modules)/,
-                loader: 'json-loader'
-            },
-            {
-                test: /\.css$/,
-                exclude: /(node_modules)/,
-                loader: 'style-loader!css-loader!postcss-loader'
-            }
+            test: /\.js$/,
+            exclude: /(node_modules)/,
+            loader: 'babel-loader',
+        }, //transpiles es6 to es5
+        {
+            test: /\.json$/,
+            exclude: /(node_modules)/,
+            loader: 'json-loader'
+        },
+        {
+            test: /\.css$/,
+            exclude: /(node_modules)/,
+            loader: 'style-loader!css-loader!postcss-loader'
+        }, //loads styles, postcss makes style compatiable with old browser
+        {
+            test: /\.(png|jpg|svg|jpeg|gif)$/,
+            loader: 'url-loader?limit=25000'
+        } //loads images inside bundle.js
         ]
     },
 
@@ -39,18 +46,18 @@ const config = {
         compress: true,
         hot: true,
         port: 5000
-    },
+    }, //dev-server for development purposes
 
     plugins: [
-        new CleanWebpackPlugin(['build']),
+        new CleanWebpackPlugin(['build']), // cleaning old build folder
         new HtmlWebpackPlugin({
-            title: 'Welcome to Poletop',
+            title: 'Welcome',
             template: 'template.ejs'
-        }),
-        new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin()
+        }), //creating new html from template.js
+        new webpack.NamedModulesPlugin(), //shows relative path during development
+        new webpack.HotModuleReplacementPlugin(),
     ]
 
-};
+}; //config
 
-module.exports = config;
+module.exports = config; //exporting the config

@@ -8,6 +8,11 @@ $ cd react-webpack
 $ npm install
 $ npm start
 ```
-> ```$ npm start``` starts the webpack-dev-server
+> ```$ npm start || yarn start``` starts the webpack-dev-server
 
-> ```$ npm run webpack``` bundles the components into bundle.js
+> ```$ npm test || yarn test``` Runs all the unit tests
+
+> ```$ npm run build || yarn build``` bundles the components and creates build folder
+
+> ```$ npm run serve || yarn serve``` Serves the build files in local ip address
+

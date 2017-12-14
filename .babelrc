@@ -12,18 +12,23 @@
                     "./src"
                 ],
                 "alias": {
+                    "src": "/",
                     "components": "/components",
                     "actions": "/actions",
                     "containers": "/containers",
                     "images": "/images",
                     "reducers": "/reducers",
                     "styles": "/styles",
-                    "utils": "/utils"
+                    "utils": "/utils",
+                    "map": "/map"
                 }
             }
         ],
         [
             "react-hot-loader/babel"
         ]
-    ]
+    ],
+    "env": {
+        "test": {}
+    }
 }
