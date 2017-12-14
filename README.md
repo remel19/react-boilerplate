@@ -3,7 +3,7 @@ A starter project. React.js+Webpack
 
 #### To get started:
 ```
-$ git clone https://github.com/remel19/react-webpack
+$ git clone https://github.com/remel19/react-boilerplate
 $ cd react-webpack
 $ npm install
 $ npm start
