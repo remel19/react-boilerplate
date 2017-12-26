@@ -6,6 +6,6 @@ import { App } from 'components/App';
 describe('Test for main index file', () => {
     const wrapper = shallow(<App />);
     it('Should render without exploading', () => {
-        console.log(wrapper.debug());
+        expect(wrapper).toHaveLength(1);
     });
 });
