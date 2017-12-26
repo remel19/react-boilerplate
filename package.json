@@ -8,8 +8,8 @@
         "ie > 9"
     ],
     "scripts": {
-        "start": "webpack-dev-server --open",
-        "build": "webpack",
+        "start": "webpack-dev-server --open --config webpack.dev.js",
+        "build": "webpack --config webpack.prod.js",
         "test": "jest",
         "serve": "serve build"
     },
@@ -50,9 +50,11 @@
         "react-test-renderer": "^16.0.0",
         "serve": "^6.4.0",
         "style-loader": "^0.19.0",
+        "uglifyjs-webpack-plugin": "^1.1.4",
         "url-loader": "^0.6.2",
         "webpack": "^3.5.6",
-        "webpack-dev-server": "^2.7.1"
+        "webpack-dev-server": "^2.7.1",
+        "webpack-merge": "^4.1.1"
     },
     "dependencies": {
         "axios": "^0.17.0",
