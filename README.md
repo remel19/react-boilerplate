@@ -1,10 +1,10 @@
 # react-boilerplate
-A starter project. React.js+Webpack
+A react.js starter project
 
 #### To get started:
 ```
 $ git clone https://github.com/remel19/react-boilerplate
-$ cd react-webpack
+$ cd react-boilerplate
 $ npm install
 $ npm start
 ```
