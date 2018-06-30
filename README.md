@@ -1,5 +1,5 @@
 # react-boilerplate
-A react.js starter project
+A starter project for React
 
 #### To get started:
 ```
